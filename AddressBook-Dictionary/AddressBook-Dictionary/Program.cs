@@ -60,7 +60,13 @@ namespace AddressBook_Dictionary
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook-Dictionary");
-            AddPerson();
+            Console.WriteLine("Enter Add->To add details\n exit->To exit");
+            string command = Console.ReadLine();
+            while( command != "exit")
+            {
+                AddPerson();
+            }
+            
 
         }
     }

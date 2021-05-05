@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\bin\Debug\AddressBook-Dictionary.exe.config
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\bin\Debug\AddressBook-Dictionary.exe
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\bin\Debug\AddressBook-Dictionary.pdb
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\obj\Debug\AddressBook-Dictionary.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\obj\Debug\AddressBook-Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\obj\Debug\AddressBook-Dictionary.exe
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBook-Dictionary\obj\Debug\AddressBook-Dictionary.pdb

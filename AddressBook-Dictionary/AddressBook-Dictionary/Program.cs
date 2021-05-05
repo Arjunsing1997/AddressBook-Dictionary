@@ -157,6 +157,47 @@ namespace AddressBook_Dictionary
                 }
             }
         }
+
+        public static void RemovePerson()
+        {
+            
+            if (People.Count.Equals(0))  //cheking whether list is empty
+            {
+                Console.WriteLine("List is Empty!!!!! \n Enter any Key to Continue...");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Enter the first name of the person you would like to remove.");
+                string firstName = Console.ReadLine();
+                if (!People.ContainsKey(firstName)) //this condition describes that there are no match found
+                {
+                    Console.WriteLine("That person could not be found. Press any key to continue");
+                    Console.ReadKey();
+                    return;
+                }
+                else
+                {
+                    foreach (KeyValuePair<string, Person> item in People)  //Iterating
+                    {
+                        if (item.Value.FirstName == firstName) //comapring name with the first name of list
+                        {
+                            Console.WriteLine("Are you sure you want to remove this person from your address book? (Y/N)");
+                            PrintPerson(item.Value);
+
+                            if (Console.ReadKey().Key == ConsoleKey.Y)
+                            {
+                                People.Remove(item.Value.FirstName);   //removing data from list
+                                Console.WriteLine("\nPerson removed. Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            }
+                        }
+
+                    }
+                } 
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook-Dictionary");
@@ -165,7 +206,7 @@ namespace AddressBook_Dictionary
             while( command != "exit")
             {
                 Console.Clear();
-                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nexit");
+                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nexit");
                 Console.WriteLine("--------------------");
                 command = Console.ReadLine();
 
@@ -185,6 +226,10 @@ namespace AddressBook_Dictionary
 
                     case "exit":
                         Console.WriteLine("Exiting....");
+                        break;
+
+                    case "remove":
+                        RemovePerson();
                         break;
 
                     default:

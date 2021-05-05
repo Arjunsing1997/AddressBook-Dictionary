@@ -60,6 +60,8 @@ namespace AddressBook_Dictionary
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook-Dictionary");
+            AddPerson();
+
         }
     }
 }

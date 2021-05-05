@@ -31,31 +31,36 @@ namespace AddressBook_Dictionary
 
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
+            int value = Unique(person.FirstName);
+            if ( value != 0)
+            {
+                Console.Write("Enter Last Name: ");
+                person.LastName = Console.ReadLine();
 
-            Console.Write("Enter Last Name: ");
-            person.LastName = Console.ReadLine();
+                Console.Write("Enter Address : ");
+                person.Address = Console.ReadLine();
 
-            Console.Write("Enter Address : ");
-            person.Address = Console.ReadLine();
+                Console.Write("Enter City: ");
+                person.City = Console.ReadLine();
 
-            Console.Write("Enter City: ");
-            person.City = Console.ReadLine();
+                Console.Write("Enter State : ");
+                person.State = Console.ReadLine();
 
-            Console.Write("Enter State : ");
-            person.State = Console.ReadLine();
+                Console.Write("Enter ZIP : ");
+                person.Zip = Console.ReadLine();
 
-            Console.Write("Enter ZIP : ");
-            person.Zip = Console.ReadLine();
+                Console.Write("Enter Phone Number: ");
+                person.PhoneNumber = Console.ReadLine();
 
-            Console.Write("Enter Phone Number: ");
-            person.PhoneNumber = Console.ReadLine();
-
-            Console.Write("Enter Email : ");
-            person.Email = Console.ReadLine();
+                Console.Write("Enter Email : ");
+                person.Email = Console.ReadLine();
 
 
 
-            People.Add(person.FirstName, person);
+                People.Add(person.FirstName, person);
+            }
+
+            
         }
         private static void DIsplayPeople()
         {
@@ -198,6 +203,19 @@ namespace AddressBook_Dictionary
                 } 
             }
         }
+
+        public static int Unique(string firstname)
+        {
+            if(People.ContainsKey(firstname))
+            {
+                Console.WriteLine("Name Already Existed....\n Enter a Unique Name please........");
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook-Dictionary");
@@ -236,7 +254,6 @@ namespace AddressBook_Dictionary
                         Console.WriteLine("Invalid Command");
                         break;
                 }
-                
 
             }
             

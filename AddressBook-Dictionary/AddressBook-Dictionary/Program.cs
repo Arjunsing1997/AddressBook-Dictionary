@@ -31,34 +31,32 @@ namespace AddressBook_Dictionary
 
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
-            int value = Unique(person.FirstName);
-            if ( value != 0)
-            {
-                Console.Write("Enter Last Name: ");
-                person.LastName = Console.ReadLine();
 
-                Console.Write("Enter Address : ");
-                person.Address = Console.ReadLine();
+            Console.Write("Enter Last Name: ");
+            person.LastName = Console.ReadLine();
 
-                Console.Write("Enter City: ");
-                person.City = Console.ReadLine();
+            Console.Write("Enter Address : ");
+            person.Address = Console.ReadLine();
 
-                Console.Write("Enter State : ");
-                person.State = Console.ReadLine();
+            Console.Write("Enter City: ");
+            person.City = Console.ReadLine();
 
-                Console.Write("Enter ZIP : ");
-                person.Zip = Console.ReadLine();
+             Console.Write("Enter State : ");
+             person.State = Console.ReadLine();
 
-                Console.Write("Enter Phone Number: ");
-                person.PhoneNumber = Console.ReadLine();
+             Console.Write("Enter ZIP : ");
+             person.Zip = Console.ReadLine();
 
-                Console.Write("Enter Email : ");
-                person.Email = Console.ReadLine();
+             Console.Write("Enter Phone Number: ");
+             person.PhoneNumber = Console.ReadLine();
 
+             Console.Write("Enter Email : ");
+             person.Email = Console.ReadLine();
 
-
+            bool result = NoDublicates(person.FirstName, person.LastName, person.Address, person.City, person.PhoneNumber);
+            if(!result)
                 People.Add(person.FirstName, person);
-            }
+
 
             
         }
@@ -204,19 +202,34 @@ namespace AddressBook_Dictionary
             }
         }
 
-        public static int Unique(string firstname)
+        //public static int Unique(string firstname)
+        //{
+        //    if(People.ContainsKey(firstname))
+        //    {
+        //        Console.WriteLine("Name Already Existed....\n Enter a Unique Name please........");
+        //        Console.ReadLine();
+        //        return 0;
+        //    }
+        //    else
+        //    {
+        //        return 1;
+        //    }
+
+        //}
+
+        public static bool NoDublicates(string first,string Last, string Address, string city, string phoneNumber)
         {
-            if(People.ContainsKey(firstname))
+            bool result = People.Any(x => (x.Value.FirstName == first)&&(x.Value.LastName == Last) && (x.Value.Address == Address) && (x.Value.City == city) && (x.Value.PhoneNumber == phoneNumber));
+            if(result)
             {
-                Console.WriteLine("Name Already Existed....\n Enter a Unique Name please........");
+                Console.WriteLine("User Already Existed\nEnter Any key to Continue...");
                 Console.ReadLine();
-                return 0;
+                return result;
             }
             else
             {
-                return 1;
+                return result;
             }
-
         }
 
         

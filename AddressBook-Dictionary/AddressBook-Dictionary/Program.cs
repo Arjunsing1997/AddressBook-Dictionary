@@ -209,13 +209,17 @@ namespace AddressBook_Dictionary
             if(People.ContainsKey(firstname))
             {
                 Console.WriteLine("Name Already Existed....\n Enter a Unique Name please........");
+                Console.ReadLine();
                 return 0;
             }
             else
             {
                 return 1;
             }
+
         }
+
+        
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook-Dictionary");

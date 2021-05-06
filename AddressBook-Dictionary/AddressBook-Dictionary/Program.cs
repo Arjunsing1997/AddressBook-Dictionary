@@ -219,7 +219,7 @@ namespace AddressBook_Dictionary
 
         public static bool NoDublicates(string first,string Last, string Address, string city, string phoneNumber)
         {
-            bool result = People.Any(x => (x.Value.FirstName == first)&&(x.Value.LastName == Last) && (x.Value.Address == Address) && (x.Value.City == city) && (x.Value.PhoneNumber == phoneNumber));
+            bool result = People.Any(x => (x.Value.FirstName == first)||(x.Value.LastName == Last) || (x.Value.Address == Address) || (x.Value.PhoneNumber == phoneNumber));
             if(result)
             {
                 Console.WriteLine("User Already Existed\nEnter Any key to Continue...");
@@ -231,6 +231,57 @@ namespace AddressBook_Dictionary
                 return result;
             }
         }
+        
+        public static void SearchByCityState()
+        {
+            if(People.Count > 0)
+            {
+                Console.WriteLine("Enter your Choice...\n1)By City\n2)By State");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                if(choice == 1)
+                {
+                    Console.WriteLine("Enter your City....");
+                    string city = Console.ReadLine();
+                    Console.WriteLine("First Name\tLast Name\t City");
+                    foreach (KeyValuePair<string, Person> item in People)
+                    {
+                        bool searchedCity = People.Any(s => (s.Value.City == city));
+                        if(searchedCity)
+                        {
+                            Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.City);
+                            
+                        }
+                    } 
+                }
+                else if( choice == 2)
+                {
+                    Console.WriteLine("Enter your State....");
+                    string state = Console.ReadLine();
+                    Console.WriteLine("First Name\tLast Name\t State");
+                    foreach (KeyValuePair<string, Person> item in People)
+
+                    {
+                        bool searchedState = People.Any(s => (s.Value.State == state));
+                        if (searchedState)
+                        {
+                            Console.WriteLine(item.Value.FirstName +"\t"+item.Value.LastName+"\t"+item.Value.State);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Choice");
+                    SearchByCityState();
+                }
+            }
+            else
+            {
+                Console.WriteLine("There are no Details Available....");
+                Console.ReadLine();
+            }
+            Console.WriteLine("--------------------------------");
+            Console.ReadLine();
+        }
 
         
         static void Main(string[] args)
@@ -241,7 +292,7 @@ namespace AddressBook_Dictionary
             while( command != "exit")
             {
                 Console.Clear();
-                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nexit");
+                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nexit");
                 Console.WriteLine("--------------------");
                 command = Console.ReadLine();
 
@@ -267,14 +318,15 @@ namespace AddressBook_Dictionary
                         RemovePerson();
                         break;
 
+                    case "search":
+                        SearchByCityState();
+                        break;
+
                     default:
                         Console.WriteLine("Invalid Command");
                         break;
                 }
-
             }
-            
-
         }
     }
 }

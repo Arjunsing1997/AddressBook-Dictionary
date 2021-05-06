@@ -251,6 +251,10 @@ namespace AddressBook_Dictionary
                             Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.City);
                             
                         }
+                        else
+                        {
+                            searchedCity = false;
+                        }
                     } 
                 }
                 else if( choice == 2)
@@ -259,12 +263,15 @@ namespace AddressBook_Dictionary
                     string state = Console.ReadLine();
                     Console.WriteLine("First Name\tLast Name\t State");
                     foreach (KeyValuePair<string, Person> item in People)
-
                     {
                         bool searchedState = People.Any(s => (s.Value.State == state));
                         if (searchedState)
                         {
                             Console.WriteLine(item.Value.FirstName +"\t"+item.Value.LastName+"\t"+item.Value.State);
+                        }
+                        else
+                        {
+                            searchedState = false;
                         }
                     }
                 }
@@ -283,6 +290,35 @@ namespace AddressBook_Dictionary
             Console.ReadLine();
         }
 
+        public static void GetDetailsByCityState()
+        {
+            if(People.Count > 0)
+            {
+                Console.WriteLine("Entre a City or State to search persons Details...");
+                string cityState = Console.ReadLine();
+                bool result = People.Any(x => (x.Value.City == cityState));
+                bool result2 = People.Any(x => (x.Value.State == cityState));
+
+                if(result)
+                {
+                    Console.WriteLine("First Name\tLast Name\t City");
+                    foreach (KeyValuePair<string, Person> item in People)
+                        Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.City);
+                }
+                if(result2)
+                {
+                    Console.WriteLine("First Name\tLast Name\t State");
+                    foreach (KeyValuePair<string, Person> item in People)
+                        Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.State);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Address book is EMPTY!!!!!");
+            }
+            Console.ReadLine();
+        }
+
         
         static void Main(string[] args)
         {
@@ -292,7 +328,7 @@ namespace AddressBook_Dictionary
             while( command != "exit")
             {
                 Console.Clear();
-                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nexit");
+                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nsearch2\nexit");
                 Console.WriteLine("--------------------");
                 command = Console.ReadLine();
 
@@ -320,6 +356,10 @@ namespace AddressBook_Dictionary
 
                     case "search":
                         SearchByCityState();
+                        break;
+
+                    case "search2":
+                        GetDetailsByCityState();
                         break;
 
                     default:

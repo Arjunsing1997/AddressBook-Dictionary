@@ -245,15 +245,11 @@ namespace AddressBook_Dictionary
                     Console.WriteLine("First Name\tLast Name\t City");
                     foreach (KeyValuePair<string, Person> item in People)
                     {
-                        bool searchedCity = People.Any(s => (s.Value.City == city));
-                        if(searchedCity)
+                        //bool searchedCity = People.Any(s => (s.Value.City == city));
+                        if(item.Value.City == city)
                         {
                             Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.City);
                             
-                        }
-                        else
-                        {
-                            searchedCity = false;
                         }
                     } 
                 }
@@ -264,14 +260,10 @@ namespace AddressBook_Dictionary
                     Console.WriteLine("First Name\tLast Name\t State");
                     foreach (KeyValuePair<string, Person> item in People)
                     {
-                        bool searchedState = People.Any(s => (s.Value.State == state));
-                        if (searchedState)
+                       // bool searchedState = People.Any(s => (s.Value.State == state));
+                        if (item.Value.State == state)
                         {
-                            Console.WriteLine(item.Value.FirstName +"\t"+item.Value.LastName+"\t"+item.Value.State);
-                        }
-                        else
-                        {
-                            searchedState = false;
+                            Console.WriteLine(item.Value.FirstName +"\t\t"+item.Value.LastName+"\t\t"+item.Value.State);
                         }
                     }
                 }
@@ -296,21 +288,27 @@ namespace AddressBook_Dictionary
             {
                 Console.WriteLine("Entre a City or State to search persons Details...");
                 string cityState = Console.ReadLine();
-                bool result = People.Any(x => (x.Value.City == cityState));
-                bool result2 = People.Any(x => (x.Value.State == cityState));
+                foreach (KeyValuePair<string, Person> item in People)
+                {
+                    //bool result = People.Any(x => (x.Value.City == cityState));
+                    //bool result2 = People.Any(x => (x.Value.State == cityState));
 
-                if(result)
-                {
-                    Console.WriteLine("First Name\tLast Name\t City");
-                    foreach (KeyValuePair<string, Person> item in People)
+                    if (item.Value.City == cityState)
+                    {
+                        Console.WriteLine("First Name\tLast Name\t City");
+                        //foreach (KeyValuePair<string, Person> item in People)
                         Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.City);
-                }
-                if(result2)
-                {
-                    Console.WriteLine("First Name\tLast Name\t State");
-                    foreach (KeyValuePair<string, Person> item in People)
+                       
+                    }
+                    if (item.Value.State == cityState)
+                    {
+                        Console.WriteLine("First Name\tLast Name\t State");
+                        //foreach (KeyValuePair<string, Person> item in People)
                         Console.WriteLine(item.Value.FirstName + "\t" + item.Value.LastName + "\t" + item.Value.State);
+                        
+                    }
                 }
+                
             }
             else
             {

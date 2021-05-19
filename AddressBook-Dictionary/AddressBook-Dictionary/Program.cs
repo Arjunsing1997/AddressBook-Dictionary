@@ -330,6 +330,7 @@ namespace AddressBook_Dictionary
         {
             Console.WriteLine("Choose option To Sort\n1)City\n2)State\n3)Zip");
             int choice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Sorting....");
             switch (choice)
             {
                 case 1:
@@ -414,6 +415,7 @@ namespace AddressBook_Dictionary
                     default:
                         Console.WriteLine("Invalid Command");
                         break;
+
                 }
             }
         }

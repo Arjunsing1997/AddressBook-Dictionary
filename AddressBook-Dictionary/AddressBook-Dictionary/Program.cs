@@ -6,26 +6,15 @@ using System.Threading.Tasks;
 
 namespace AddressBook_Dictionary
 {
-    class Program
+    public class Program
     {
 
        static Dictionary<string, Person> People = new Dictionary<string, Person>();
-        public class Person     //creating a class with get and set method
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Address { get; set; }
-            public string City { get; set; }
-            public string State { get; set; }
-            public string Zip { get; set; }
-            public string PhoneNumber { get; set; }
-            public string Email { get; set; }
-
-        }
+        
         /// <summary>
         /// Adds the person.
         /// </summary>
-        private static void AddPerson()
+        public void AddPerson()
         {
             Person person = new Person();
 
@@ -60,7 +49,7 @@ namespace AddressBook_Dictionary
 
             
         }
-        private static void DIsplayPeople()
+        public static void DIsplayPeople()
         {
             if (People.Count == 0)
             {

@@ -1,0 +1,17 @@
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\obj\Debug\AddressBookTestClass.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\obj\Debug\AddressBookTestClass.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\AddressBookTestClass.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\AddressBookTestClass.pdb
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\AddressBook-Dictionary.exe
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\AddressBook-Dictionary.pdb
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\AddressBook-Dictionary.exe.config
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\obj\Debug\AddressBookTestClass.csproj.CopyComplete
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\obj\Debug\AddressBookTestClass.dll
+C:\Users\HP\source\repos\AddressBook-Dictionary\AddressBook-Dictionary\AddressBookTestClass\obj\Debug\AddressBookTestClass.pdb

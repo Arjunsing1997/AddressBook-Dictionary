@@ -321,13 +321,46 @@ namespace AddressBook_Dictionary
             Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
             foreach (KeyValuePair<String, Person> item in People.OrderBy(key => key.Value.FirstName))
             {
-                Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
                 Console.WriteLine(" " +item.Value.FirstName+"\t\t"+ item.Value.LastName+"\t\t"+ item.Value.Zip+"\t"+ item.Value.State+"\t"+item.Value.City);
             }
             Console.ReadLine();
         }
 
-        
+        public static void Sort_By_City_State_Zip()
+        {
+            Console.WriteLine("Choose option To Sort\n1)City\n2)State\n3)Zip");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
+                    foreach (KeyValuePair<String, Person> item in People.OrderBy(key => key.Value.City))
+                    {
+                        Console.WriteLine(" " + item.Value.FirstName + "\t\t" + item.Value.LastName + "\t\t" + item.Value.Zip + "\t" + item.Value.State + "\t" + item.Value.City);
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
+                    foreach (KeyValuePair<String, Person> item in People.OrderBy(key => key.Value.State))
+                    {
+                        Console.WriteLine(" " + item.Value.FirstName + "\t\t" + item.Value.LastName + "\t\t" + item.Value.Zip + "\t" + item.Value.State + "\t" + item.Value.City);
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
+                    foreach (KeyValuePair<String, Person> item in People.OrderBy(key => key.Value.Zip))
+                    {
+                        Console.WriteLine(" " + item.Value.FirstName + "\t\t" + item.Value.LastName + "\t\t" + item.Value.Zip + "\t" + item.Value.State + "\t" + item.Value.City);
+                    }
+                    break;
+                default:Console.WriteLine("Invalid Choice");
+                    break;
+            }
+            
+            Console.ReadLine();
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBook-Dictionary");
@@ -336,7 +369,7 @@ namespace AddressBook_Dictionary
             while( command != "exit")
             {
                 Console.Clear();
-                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nsearch2\nSort\nexit");
+                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nsearch2\nSort\nSort2\nexit");
                 Console.WriteLine("--------------------");
                 command = Console.ReadLine();
 
@@ -372,6 +405,10 @@ namespace AddressBook_Dictionary
 
                     case "sort":
                         Sort_By_Name();
+                        break;
+
+                    case "sort2":
+                        Sort_By_City_State_Zip();
                         break;
 
                     default:

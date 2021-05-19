@@ -6,15 +6,26 @@ using System.Threading.Tasks;
 
 namespace AddressBook_Dictionary
 {
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+    }
+
     public class Program
     {
-
        static Dictionary<string, Person> People = new Dictionary<string, Person>();
         
         /// <summary>
         /// Adds the person.
         /// </summary>
-        public void AddPerson()
+        public static void AddPerson()
         {
             Person person = new Person();
 
@@ -305,6 +316,16 @@ namespace AddressBook_Dictionary
             }
             Console.ReadLine();
         }
+        public static void Sort_By_Name()
+        {
+            Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
+            foreach (KeyValuePair<String, Person> item in People.OrderBy(key => key.Value.FirstName))
+            {
+                Console.WriteLine("First_Name\tLast_Name\tZip\tState\tCity");
+                Console.WriteLine(" " +item.Value.FirstName+"\t\t"+ item.Value.LastName+"\t\t"+ item.Value.Zip+"\t"+ item.Value.State+"\t"+item.Value.City);
+            }
+            Console.ReadLine();
+        }
 
         
         static void Main(string[] args)
@@ -315,7 +336,7 @@ namespace AddressBook_Dictionary
             while( command != "exit")
             {
                 Console.Clear();
-                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nsearch2\nexit");
+                Console.WriteLine("Enter Commands\nAdd\nEdit\nDisplay\nRemove\nSearch\nsearch2\nSort\nexit");
                 Console.WriteLine("--------------------");
                 command = Console.ReadLine();
 
@@ -347,6 +368,10 @@ namespace AddressBook_Dictionary
 
                     case "search2":
                         GetDetailsByCityState();
+                        break;
+
+                    case "sort":
+                        Sort_By_Name();
                         break;
 
                     default:
